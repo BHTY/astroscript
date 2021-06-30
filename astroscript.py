@@ -2,6 +2,7 @@
 AstroScript Interpreter for AstroShell
 Version 0.5.0
 6/24/2021
+Last edited 6/29
 
 Data Types
 - String
@@ -556,8 +557,7 @@ if __name__ == "__main__":
                 lines += line + "\n"
 
     else:
-        for i in range(2, len(sys.argv)): #put them in an array instead
-            variables["__arg{}".format(i)] = sys.argv[i]
+        variables["__args"] = sys.argv
 
         file = open(sys.argv[1], "r")
         execute(file.read(), variables, functions)
